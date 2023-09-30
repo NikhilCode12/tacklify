@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Young Serif', serif;
+    background: #222;
+    color: white;
+    word-spacing: 2px;
+}
+
+h1{
+    margin: 50px 0;
+}
+
+#task-container{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#data{
+    font-family: 'Young Serif',serif;
+    font-weight: lighter;
+    margin: 5px;
+    background-color: #555;
+    width: 80%;
+    border: none;
+    color: whitesmoke;
+    padding: 2px;
+    font-size: 1em;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+
+#data::placeholder{
+    color: rgba(245, 245, 245, 0.671);
+}
+
+#data:focus{
+    border-bottom: 1px solid white;
+}
+
+div{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 10px 0;
+}
+
+li{
+    list-style: none;
+    margin: 0 10px;
+}
+
+/* #checks{
+
+} */
+
+ul{
+    background: #555;
+    padding: 40px;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 15px;
+    box-shadow: 2px 2px 0 0 #f5f5f5;
+}
+
+#add-new{
+    cursor: pointer;
+    border-radius: 100%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+    color: whitesmoke;
+    background: #222;
+}
+
+#add-new:hover{
+    color: white;
+    background: #353434;
+}

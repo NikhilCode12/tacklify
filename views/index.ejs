@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Web-App</title>
+</head>
+<body>
+    <%-include("partials/header.ejs") %>
+    <h1>To-Do Web Server App</h1>
+    <ul id="">
+        <% for(let i=0;i<array.length;i++){ %>
+            <div>
+                <input type="checkbox" name="" id="checks"><li><%= array[i] %></li>
+            </div>
+        <% } %>
+        <form action="/" method="post">
+            <input type="text" name="task" id="data" autocomplete="off" placeholder="Add new task here..">
+            <button type="submit" id="add-new">+</button>
+        </form>
+    </ul>
+    <%-include("partials/footer.ejs") %>
+</body>
+</html>
