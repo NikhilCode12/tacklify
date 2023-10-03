@@ -8,12 +8,12 @@
 <body>
     <%-include("partials/header.ejs") %>
     <h1>To-Do App : <%= date_time %></h1>
-    <ul id="">
-        <% for(let i=0;i<array.length;i++){ %>
-            <div>
-                <input type="checkbox" name="" id="checks"><li><%= array[i] %></li>
+    <ul id="task-container">
+        <% items.forEach(task => { %>
+            <div id="task-div">
+                <input type="checkbox" name="" id="checks"><li><%= task.name %></li>
             </div>
-        <% } %>
+        <% }); %>
         <form action="/" method="post">
             <input type="text" name="task" id="data" autocomplete="off" placeholder="Add new task here..">
             <button type="submit" id="add-new">+</button>
