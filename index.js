@@ -99,12 +99,24 @@ app.post('/', async (req,res)=>{
         newItem.save();
         res.redirect('/'+ listName);
     }
-})
+});
 
 app.post('/remove',async (req,res)=>{
-    const checkedTaskId = req.body.checkbox;
-    await TodoList.findByIdAndRemove({_id : checkedTaskId});
-    res.redirect('/');
+    try{
+        const checkedTaskId = req.body.checkbox;
+        const listname = req.body.listName;
+
+        if(listname !== 'Welcome'){
+            await CustomTodoList.findOneAndUpdate({name : listname}, {$pull : { xitems : {_id : checkedTaskId}}});
+            res.redirect('/' + listname);
+        } else{
+            await TodoList.findByIdAndRemove({_id : checkedTaskId});
+            res.redirect('/');
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
 });
 
 app.listen(port,()=>{
