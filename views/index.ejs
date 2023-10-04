@@ -8,16 +8,20 @@
 <body>
     <%-include("partials/header.ejs") %>
     <div class="clock"><button onclick="window.location.href='/'"><%= time.time %></button></div>
-    <h1>To-Do App ~ <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
+    <h1><%= title %> ~ <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
     <ul id="task-container">
         <% items.forEach(task => { %>
-            <div id="task-div">
-                <input type="checkbox" name="" id="checks"><li><%= task.name %></li>
-            </div>
+            <form id="check-box" action="/remove" method="post">
+                <div id="task-div">
+                    <input type="checkbox" name="checkbox" id="checks" value="<%= task._id %>" onchange="this.form.submit()">
+                    <li><%= task.name %></li>
+                </div>
+                <input type="hidden" name="listName" value="<% title %>">
+            </form>
         <% }); %>
         <form action="/" method="post">
             <input type="text" name="task" id="data" autocomplete="off" placeholder="Add new task here..">
-            <button type="submit" id="add-new">+</button>
+            <button type="submit" id="add-new" name="list" value="<%= title %>">+</button>
         </form>
     </ul>
     <%-include("partials/footer.ejs") %>
