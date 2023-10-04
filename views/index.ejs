@@ -7,7 +7,8 @@
 </head>
 <body>
     <%-include("partials/header.ejs") %>
-    <h1>To-Do App : <%= date_time %></h1>
+    <div class="clock"><h1><%= time.time %></h1></div>
+    <h1>To-Do App ~ <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
     <ul id="task-container">
         <% items.forEach(task => { %>
             <div id="task-div">
