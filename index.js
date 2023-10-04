@@ -57,7 +57,7 @@ app.get('/:customListName',async (req,res)=>{
     try{
         const localTime = await axios.get(worldTimeAPIURL);
         const currentTime = localTime.data.datetime.slice(11,19) + `${localTime.data.datetime.slice(11,13) < 12 ? ' AM' : ' PM'}`;
-        const customListName = _.capitalize(req.params.customListName);
+        const customListName = req.params.customListName.charAt(0).toUpperCase() +  req.params.customListName.toLowerCase().slice(1);
         const cList = await CustomTodoList.findOne({name : customListName});
 
         if(!cList){
