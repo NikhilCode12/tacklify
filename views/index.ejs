@@ -13,7 +13,7 @@
         <% items.forEach(task => { %>
             <form id="check-box" action="/remove" method="post">
                 <div id="task-div">
-                    <input type="checkbox" name="checkbox" id="checks" value="<%= task._id %>" onchange="this.form.submit()">
+                    <button type="submit" name="checkbox" id="checks" value="<%= task._id %>" onchange="this.form.submit()">-</button>
                     <li><%= task.name %></li>
                 </div>
                 <input type="hidden" name="listName" value="<%= title %>">

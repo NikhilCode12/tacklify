@@ -33,7 +33,7 @@ form{
     justify-content: space-between;
     width: 100%;
     align-items: center;
-    margin: 6px 0;
+    margin: 8px 0;
 }
 
 #task-div{
@@ -115,7 +115,6 @@ ul{
     border-radius: 10px;
     color: whitesmoke;
     box-shadow: 0 0 2px 0 whitesmoke;
-    /* border: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000); */
     background: #222;
     padding: 7px;
 }
@@ -170,8 +169,25 @@ ul{
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
-    
-.clock button:hover{
-    animation: glowing 20s linear infinite;
-    box-shadow: none;
+
+#checks{
+    cursor: pointer;
+    border-radius: 100%;
+    border: none;
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-top: 2.25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    background: #222;
+}
+
+#checks span{
+    font-size: 0.925rem;
+}
+
+#checks:hover{
+    background: rgb(255, 0, 0);   
+    color: white;
 }
