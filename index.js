@@ -8,7 +8,7 @@ const worldTimeAPIURL = 'http://worldtimeapi.org/api/ip';
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
-mongoose.connect("mongodb://127.0.0.1:27017/todoDB",{ useNewUrlParser: true, useUnifiedTopology: true}).then(db => {console.log("Database connected");}).catch(error => console.log("Could not connect to mongo db " + error));
+mongoose.connect("mongodb+srv://admin-nikhil:test9958@tododb.dflpn5o.mongodb.net/todoDB",{ useNewUrlParser: true, useUnifiedTopology: true}).then(db => {console.log("Database connected");}).catch(error => console.log("Could not connect to mongo db " + error));
 
 const todoSchema = { name : String };
 
