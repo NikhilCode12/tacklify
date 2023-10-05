@@ -7,7 +7,7 @@
 </head>
 <body>
     <%-include("partials/header.ejs") %>
-    <div class="title" onclick="window.location.href='/'">tacklify.</div>
+    <div class="title"><span class="title-logo" onclick="window.location.href='/'">tacklify.</span></div>
     <div class="clock"><button onclick="window.location.href='/'"><%= time.time %></button></div>
     <h1><%= title %> ~ <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
     <ul id="task-container">
