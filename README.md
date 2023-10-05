@@ -1,5 +1,5 @@
 # Tacklify : Full Stack Todo Web App
-A personalized web app to tackle the tasks in your daily life, complete them and remove them off with animations.
+Whether you're planning your day or working on long-term projects, Tacklify makes task management not only efficient but also enjoyable.
 
 # Welcome Page 
 ![image](https://github.com/NikhilCode12/Todo-APP/assets/94921824/44c24f8b-7408-448a-9cd2-fd0fa6d41b19)
