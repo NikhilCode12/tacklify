@@ -16,6 +16,7 @@ body{
 
 h1{
     margin: 30px 0;
+    text-shadow: 3px 3px #000;
 }
 
 #task-container {
@@ -193,73 +194,60 @@ ul{
     color: white;
 }
 
-.title {
+.title{
     position: absolute;
     left: 10px;
-    top: 2px;
+    top: 0;
     cursor: pointer;
     font-family: 'Pacifico',cursive;
-    font-size: 1em;
+    font-size: 1.5em;
     border-radius: 10px;
     color: whitesmoke;
-    box-shadow: 0 0 2px 0 gainsboro;
-    background: #222;
-    padding: 7px;
+    padding: 4px;
     overflow: hidden;
 }
 
-.title span {
-    display: inline-block;
-    position: relative;
+.title-text {
+    margin-left: 1px;
+    animation: Color 1s linear infinite;
+    -webkit-animation: Color 5s ease-in-out infinite;
+    -webkit-background-clip: text;
 }
 
-.title span:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-    box-shadow: none;
-}
+@keyframes Color{
+  0%{
+    color:#fa5f5fee;
+  }
+  
+  12%{
+    color : #ff7300;
+  }
+  
+  24%{
+    color: #fffb00;
+  }
 
-.title span:active {
-    color: #000;
-}
+  36%{
+    color: #48ff00;
+  }
 
-.title span:active:before {
-    background: transparent;
-    box-shadow: none;
-}
+  48%{
+    color: #00ffd5;
+  }
 
-.title span:hover:before {
-    box-shadow: none;
-    opacity: 1;
-}
+  60%{
+    color: #4662f0;
+  }
 
-.title span:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    box-shadow: none;
-    background: #222;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
+  72%{
+    color: #9e4bf7;
+  }
 
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+  85%{
+    color: #ff00c8;
+  }
+  
+  100%{
+    color: #fa4b4b;
+  }
 }
