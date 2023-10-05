@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import axios from 'axios';
 const app = express();
-const port = 3000;
 const worldTimeAPIURL = 'http://worldtimeapi.org/api/ip';
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : true}));
@@ -119,8 +118,11 @@ app.post('/remove',async (req,res)=>{
     }
 });
 
+let port = process.env.PORT;
+if(port == null || port == "") { port = 3000 };
+
 app.listen(port,()=>{
-    console.log(`Listening on port : ${port}`);
+    console.log(`Todo App Rendering Successful!`);
 })
 
 const months = [
