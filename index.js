@@ -16,7 +16,7 @@ const TodoList = mongoose.model('todoList',todoSchema);
 
 const task1 = new TodoList( {name : 'Welcome to To-do list web app!'} );
 const task2 = new TodoList( {name : 'Click the + button to add a new task in the list.'} );
-const task3 = new TodoList( {name : 'Check the checkbox to mark a task completed.'} );
+const task3 = new TodoList( {name : 'Click the - button to dump a completed task.'} );
 
 const defaultTasks = [task1,task2,task3];
 
