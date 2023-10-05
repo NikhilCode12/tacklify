@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import axios from 'axios';
 const app = express();
-const worldTimeAPIURL = 'http://worldtimeapi.org/api/ip';
+const worldTimeAPIURL = 'http://worldtimeapi.org/api/timezone/Asia/Kolkata';
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
