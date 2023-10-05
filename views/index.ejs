@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tacklify - <%= title %></title>
+    <title>Tacklify - <%= title %></title>
 </head>
 <body>
     <%-include("partials/header.ejs") %>
-    <span class="title" onclick="window.location.href='/'">tack<span class="title-text">lify.</span></span>
+    <span class="title" onclick="window.location.href='/'">tacklify.</span></span>
     <div class="clock"><button onclick="window.location.href='/'"><%= time.time %></button></div>
-    <h1><%= title %> ~ <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
+    <h1><%= title %> | <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
     <ul id="task-container">
         <% items.forEach(task => { %>
             <form id="check-box" action="/remove" method="post">

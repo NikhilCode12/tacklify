@@ -13,9 +13,9 @@ const todoSchema = { name : String };
 
 const TodoList = mongoose.model('todoList',todoSchema);
 
-const task1 = new TodoList( {name : 'Welcome to To-do list web app!'} );
-const task2 = new TodoList( {name : 'Click the + button to add a new task in the list.'} );
-const task3 = new TodoList( {name : 'Click the - button to dump a completed task.'} );
+const task1 = new TodoList( {name : 'Welcome to tacklify todo app.'} );
+const task2 = new TodoList( {name : 'Click + button to add a new task.'} );
+const task3 = new TodoList( {name : 'Click - button to delete a completed task.'} );
 
 const defaultTasks = [task1,task2,task3];
 

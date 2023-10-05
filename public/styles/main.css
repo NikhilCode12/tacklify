@@ -191,63 +191,94 @@ ul{
 
 #checks:hover{
     background: rgb(255, 0, 0);   
-    color: white;
+    color: black;
 }
 
 .title{
     position: absolute;
-    left: 10px;
+    left: 5px;
     top: 0;
     cursor: pointer;
     font-family: 'Pacifico',cursive;
     font-size: 1.5em;
+    text-shadow: 3px 3px #000;
     border-radius: 10px;
-    color: whitesmoke;
+    color: lightgrey;
     padding: 4px;
     overflow: hidden;
 }
 
-.title-text {
-    margin-left: 1px;
-    animation: Color 1s linear infinite;
-    -webkit-animation: Color 5s ease-in-out infinite;
-    -webkit-background-clip: text;
+
+
+
+@media screen and (max-width: 425px) {
+    .title{
+        left: 5px;
+        font-size: 1.2em;
+    }
+
+    .clock button{
+        font-size: 0.85em;
+        padding: 5px;
+    }
+
+    h1{
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    #task-div{
+        font-size: 0.755em;
+    }
+
+    #check-box{
+        margin-left: -15px;
+    }
+
+    body{
+        margin-top: 10px;
+    }
+
+    #task-container{
+        margin-top: 0px;
+        width: 60vw;
+    }
+    
+    #data{
+        width: 80%;
+        font-size: 0.8em;
+    }
+
+    #add-new{
+        width: 25px;
+        height: 25px;
+        font-size: 1.25em;
+    }
+
+    #checks{
+        width: 1rem;
+        height: 1rem;
+        font-weight: bolder;
+        font-size: 0.75em;
+    }
+
+    ul{
+        padding: 40px;
+        width: 60vw;
+    }
 }
 
-@keyframes Color{
-  0%{
-    color:#fa5f5fee;
-  }
-  
-  12%{
-    color : #ff7300;
-  }
-  
-  24%{
-    color: #fffb00;
-  }
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    h1{
+        font-size: 1.5em;
+    }
 
-  36%{
-    color: #48ff00;
-  }
 
-  48%{
-    color: #00ffd5;
-  }
+    #task-container{
+        width: 60vw;
+    }
 
-  60%{
-    color: #4662f0;
-  }
-
-  72%{
-    color: #9e4bf7;
-  }
-
-  85%{
-    color: #ff00c8;
-  }
-  
-  100%{
-    color: #fa4b4b;
-  }
+    ul{
+        width: 60vw;
+    }
 }
