@@ -219,12 +219,11 @@ ul{
 
     .clock button{
         font-size: 0.85em;
-        padding: 5px;
+        padding: 6px;
     }
 
     h1{
         font-size: 1.1em;
-        margin-bottom: 15px;
     }
 
     #task-div{
@@ -235,21 +234,17 @@ ul{
         margin-left: -15px;
     }
 
-    body{
-        margin-top: 10px;
-    }
-
     #task-container{
-        margin-top: 0px;
         width: 60vw;
     }
     
     #data{
-        width: 80%;
-        font-size: 0.8em;
+        width: 90%;
+        font-size: 0.95em;
     }
 
     #add-new{
+        margin-left: 5px;
         width: 25px;
         height: 25px;
         font-size: 1.25em;
