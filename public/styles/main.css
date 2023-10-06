@@ -196,8 +196,8 @@ ul{
 
 .title{
     position: absolute;
-    left: 5px;
-    top: 0;
+    left: 10px;
+    top: 2px;
     cursor: pointer;
     font-family: 'Pacifico',cursive;
     font-size: 1.5em;
@@ -213,7 +213,7 @@ ul{
 
 @media screen and (max-width: 425px) {
     .title{
-        left: 5px;
+        left: 7px;
         font-size: 1.2em;
     }
 
