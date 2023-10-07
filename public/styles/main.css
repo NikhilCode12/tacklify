@@ -25,7 +25,12 @@ h1{
     align-items: center;
     overflow-y: auto;
     /* min-height: 20vh; */
+    background: #555;
+    padding: 40px;
     width: 35vw;
+    max-height: 100vh;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px 0 #f5f5f5;
 }
 
 
@@ -74,16 +79,6 @@ div{
 li{
     list-style: none;
     margin: 0 10px;
-}
-
-ul{
-    background: #555;
-    padding: 40px;
-    width: 50vh;
-    max-height: 100vh;
-    border-radius: 15px;
-    box-shadow: 2px 2px 4px 0 #f5f5f5;
-    overflow-y: auto;
 }
 
 #add-new{
@@ -166,12 +161,6 @@ ul{
     border-radius: 10px;
 }
 
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-
 #checks{
     cursor: pointer;
     border-radius: 100%;
@@ -208,8 +197,119 @@ ul{
     overflow: hidden;
 }
 
+.sidebar {
+    visibility: hidden;
+    position: absolute;
+    top: 2px;
+    width: 400px;
+    height: 40px;
+    background-color: #222;
+    box-shadow: 0 0 2px 0 whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.5s;
+}
 
+.show{
+    visibility: visible;
+}
 
+.sidebar ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+    margin: 0 10px;
+}
+
+.sidebar ul:before{
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.sidebar ul:active:after{
+    background: transparent;
+    box-shadow: none;
+}
+
+.sidebar ul:hover:before{
+    box-shadow: none;
+    opacity: 1;
+}
+
+.sidebar ul:after{
+    z-index: -2;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.sidebar ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    color: whitesmoke;
+    text-align: center;
+    font-weight: 500;
+}
+
+.sidebar ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: gainsboro;
+}
+
+.sidebar ul li:hover a .icon {
+    transition: 0.1s ease-in-out;
+    transform: scale(1.1);
+}
+
+.sidebar ul li.active a .icon{
+    color: lightskyblue;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
 
 @media screen and (max-width: 425px) {
     .title{

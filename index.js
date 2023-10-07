@@ -8,6 +8,7 @@ const worldTimeAPIURL = process.env.API_URL;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
+mongoose.set('strictQuery',true);
 mongoose.connect(process.env.DB_URL,{ useNewUrlParser: true, useUnifiedTopology: true}).then(db => {console.log("Database connected");}).catch(error => console.log("Could not connect to mongo db " + error));
 
 const todoSchema = { name : String };

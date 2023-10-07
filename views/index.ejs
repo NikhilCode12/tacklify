@@ -4,27 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tacklify - <%= title %></title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <%-include("partials/header.ejs") %>
     <span class="title" onclick="window.location.href='/'">tacklify.</span></span>
     <div class="clock"><button onclick="window.location.href='/'"><%= time.time %></button></div>
     <h1><%= title %> | <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
+    <div class="sidebar">
+        <ul class="side-bar">
+            <li class="list active">
+                <a href="/" onclick="markActive(this); return false">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/nikhildev" onclick="markActive(this); return false">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/dev" onclick="markActive(this); return false">
+                    <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
+                </a>
+            </li>
+            <li class="list" >
+                <a href="https://github.com/NikhilCode12" onclick="markActive(this); return false" target="_blank">
+                    <span class="icon"><ion-icon name="logo-github"></ion-icon></span>
+                </a>
+            </li>
+        </ul>
+    </div>
     <ul id="task-container">
         <% items.forEach(task => { %>
             <form id="check-box" action="/remove" method="post">
                 <div id="task-div">
-                    <button type="submit" name="checkbox" id="checks" value="<%= task._id %>" onchange="this.form.submit()">-</button>
+                    <button onclick="removeSound()" type="submit" name="checkbox" id="checks" value="<%= task._id %>" onchange="this.form.submit()">-</button>
                     <li><%= task.name %></li>
                 </div>
                 <input type="hidden" name="listName" value="<%= title %>">
             </form>
         <% }); %>
-        <form action="/" method="post">
+        <form action="/" method="post" class="add">
             <input type="text" name="task" id="data" autocomplete="off" placeholder="Add new task here..">
-            <button type="submit" id="add-new" name="list" value="<%= title %>">+</button>
+            <button onclick="itemSound()" type="submit" id="add-new" name="list" value="<%= title %>">+</button>
         </form>
     </ul>
-    <script src="script.js"></script>
+    <script>
+        function markActive(link) {
+            var listItems = document.querySelectorAll('.list');
+            listItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+            link.closest('li').classList.add('active');
+        }
+        function itemSound() {
+            var sound = new Audio('sounds/item.mp3');
+            sound.play();
+        }
+        function removeSound() {
+            var sound = new Audio('sounds/trash.mp3');
+            sound.play();
+        }
+
+    </script>
 </body>
 </html>
