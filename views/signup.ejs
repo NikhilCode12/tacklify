@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tacklify - <%= title %></title>
+</head>
+<body>
+    <%-include("partials/header.ejs") %>
+    <span class="title" onclick="window.location.href='/'">tacklify.</span></span>
+    <div class="clock"><button onclick="window.location.href='/'"><%= time.time %></button></div>
+    <h1><%= title %> | <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
+    <ul id="signup-login-container">
+        <form action="/" method="post" class="">
+            <div class="username-container">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="for e.g. abc123@XYZ" autocomplete="off">
+            </div>
+            <div class="password-container">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="should be strong">
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <div class="barrier"><div class="OR">or</div></div>
+        <div class="outh-container">    
+            <a class="btn btn-block google" href="/auth/google" role="button">
+                <i class="fab fa-google"></i>| Google
+            </a>
+            <a class="btn btn-block github" href="/auth/github" role="button">
+                <i class="fab fa-github"></i>| Github
+            </a>
+        </div>
+    </ul>
+</body>
+</html>

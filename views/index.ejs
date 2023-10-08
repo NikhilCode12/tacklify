@@ -6,9 +6,9 @@
     <title>Tacklify - <%= title %></title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <%-include("partials/header.ejs") %>
     <span class="title" onclick="window.location.href='/'">tacklify.</span></span>
     <div class="clock"><button onclick="window.location.href='/'"><%= time.time %></button></div>
     <h1><%= title %> | <%= time.dd %>, <%= time.mm %> <%= time.yyyy %></h1>
@@ -51,6 +51,23 @@
             <button onclick="itemSound()" type="submit" id="add-new" name="list" value="<%= title %>">+</button>
         </form>
     </ul>
+    <div class="social-buttons">
+        <a href="#" class="social-button social-button--facebook" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-button social-button--linkedin" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="social-button social-button--snapchat" aria-label="Snapchat">
+          <i class="fab fa-snapchat-ghost"></i>
+        </a>
+        <a href="#" class="social-button social-button--github" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="social-button social-button--codepen" aria-label="CodePen">
+          <i class="fab fa-codepen"></i>
+        </a>
+    </div>      
     <script>
         function markActive(link) {
             var listItems = document.querySelectorAll('.list');

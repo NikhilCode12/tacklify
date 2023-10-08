@@ -28,7 +28,7 @@ const customTodoSchema = {
 
 const CustomTodoList = mongoose.model('customList',customTodoSchema);
 
-app.get('/',async (req,res)=>{
+app.get('/home',async (req,res)=>{
     try{
         const localTime = await axios.get(worldTimeAPIURL);
         const currentTime = localTime.data.datetime.slice(11,19) + `${localTime.data.datetime.slice(11,13) < 12 ? ' AM' : ' PM'}`;
@@ -40,6 +40,33 @@ app.get('/',async (req,res)=>{
         else{
             res.render('index.ejs',{
                 title : 'Welcome',
+                time: {
+                    dd: localTime.data.datetime.slice(8,10),
+                    mm: months[parseInt(localTime.data.datetime.slice(5,7)) - 1],
+                    yyyy: localTime.data.datetime.slice(0,4),
+                    time: currentTime
+                },
+                items : tasks,
+            });
+        }
+    } catch(err){
+        console.log(err);
+    }
+});
+
+
+app.get('/',async (req,res)=>{
+    try{
+        const localTime = await axios.get(worldTimeAPIURL);
+        const currentTime = localTime.data.datetime.slice(11,19) + `${localTime.data.datetime.slice(11,13) < 12 ? ' AM' : ' PM'}`;
+        const tasks = await TodoList.find({});
+        if(tasks.length === 0){
+            TodoList.insertMany(defaultTasks);
+            res.redirect('/');
+        }
+        else{
+            res.render('signup.ejs',{
+                title : 'SignUp',
                 time: {
                     dd: localTime.data.datetime.slice(8,10),
                     mm: months[parseInt(localTime.data.datetime.slice(5,7)) - 1],
@@ -123,7 +150,7 @@ app.post('/remove',async (req,res)=>{
 let port = process.env.PORT;
 if(port == null || port == "") { port = 3000 };
 
-app.listen(port,()=>{
+app.listen(4000,()=>{
     console.log(`Todo App Rendering Successful!`);
 })
 

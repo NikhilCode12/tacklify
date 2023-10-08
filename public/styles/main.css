@@ -33,7 +33,6 @@ h1{
     box-shadow: 2px 2px 4px 0 #f5f5f5;
 }
 
-
 form{
     cursor: pointer;
     display: flex;
@@ -41,6 +40,151 @@ form{
     width: 100%;
     align-items: center;
     margin: 8px 0;
+}
+
+#signup-login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    background: #555;
+    padding:10px 20px;
+    width: 55vw;
+    height: 24vw;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 2px #f5f5f5;
+}
+
+#signup-login-container form{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+#signup-login-container .barrier{
+    width: 1px;
+    z-index: 1;
+    position: relative;
+    height: 60%;
+    background: gray;
+}
+
+#signup-login-container form div{
+    display: flex;
+    margin: 15px 0;
+    align-items: center;
+}
+
+#signup-login-container label{
+    margin: 0 15px;
+}
+
+#signup-login-container input{
+    font-family: 'Young Serif',serif;
+    font-size: 1em;
+    margin: 0 10px;
+    padding: 6px 10px;
+    outline: none;
+    background: whitesmoke;
+    color: #222;
+    border: none;
+    border-bottom: 4px solid gray;
+    border-right: 4px solid gray;
+    border-radius: 2px;
+    transition: 0.25s ease-in-out;
+}
+
+#signup-login-container input::placeholder{
+    font-size: 0.85em;
+}
+
+#signup-login-container input:focus{
+    border-bottom: 4px solid lightseagreen;
+    border-right: 4px solid lightseagreen;
+}
+
+#signup-login-container a{
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#signup-login-container a.google{
+    background: rgba(255, 51, 0,0.9);
+}
+
+#signup-login-container a.github{
+    background: rgba(0,0,0,0.9);
+}
+
+#signup-login-container a.google:hover{
+    background: rgb(255, 51, 0);
+}
+
+#signup-login-container a.github:hover{
+    background: rgba(0, 0, 0);
+}
+
+#signup-login-container .outh-container{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+    flex-direction: column;
+}
+
+#signup-login-container div{
+    margin: 10px;
+}
+
+#signup-login-container div a{
+    display: flex;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+#signup-login-container div a i{
+    margin: 0 10px;
+}
+
+#signup-login-container .barrier .OR{
+    width: 25px;
+    height: 25px;
+    background: #555;
+    border: 1px solid #555;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55px;
+    right: -20px;
+}
+
+#signup-login-container form button{
+    font-family: 'Young Serif',serif;
+    font-size: 1em;
+    margin: 0 10px;
+    padding: 6px 10px;
+    outline: none;
+    background: whitesmoke;
+    color: #222;
+    border: none;
+    border-bottom: 4px solid gray;
+    border-right: 4px solid gray;
+    border-radius: 2px;
+    transition: 0.25s ease-in-out;   
+    position: absolute;
+}
+
+#signup-login-container form button:hover{
+    background: lightseagreen;
+    cursor: pointer;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
 }
 
 #task-div{
