@@ -50,9 +50,10 @@ form{
     background: #555;
     padding:10px 20px;
     width: 55vw;
-    height: 24vw;
+    height: 25vw;
     border-radius: 15px;
     box-shadow: 0 0 5px 2px #f5f5f5;
+    position: relative;
 }
 
 #signup-login-container form{
@@ -65,7 +66,7 @@ form{
     width: 1px;
     z-index: 1;
     position: relative;
-    height: 60%;
+    height: 200px;
     background: gray;
 }
 
@@ -129,8 +130,8 @@ form{
     padding: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 0 15px;
+    align-items: flex-start;
+    margin: 20px 15px;
     flex-direction: column;
 }
 
@@ -152,7 +153,7 @@ form{
 
 #signup-login-container .barrier .OR{
     width: 25px;
-    height: 25px;
+    height: 40px;
     background: #555;
     border: 1px solid #555;
     z-index: 2;
@@ -160,11 +161,11 @@ form{
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 55px;
+    top: 60px;
     right: -20px;
 }
 
-#signup-login-container form button{
+#signup-login-container form .signup-forgot .submit-btn{
     font-family: 'Young Serif',serif;
     font-size: 1em;
     margin: 0 10px;
@@ -177,10 +178,13 @@ form{
     border-right: 4px solid gray;
     border-radius: 2px;
     transition: 0.25s ease-in-out;   
-    position: absolute;
 }
 
-#signup-login-container form button:hover{
+.submit-btn{
+    margin-left: 10px;
+}
+
+#signup-login-container form .submit-btn:hover{
     background: lightseagreen;
     cursor: pointer;
     border-right: 4px solid black;

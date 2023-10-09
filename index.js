@@ -4,12 +4,13 @@ import mongoose from 'mongoose';
 import axios from 'axios';
 const app = express();
 const worldTimeAPIURL = process.env.API_URL;
+const dbURL = process.env.DB_URL;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
 mongoose.set('strictQuery',true);
-mongoose.connect(process.env.DB_URL,{ useNewUrlParser: true, useUnifiedTopology: true}).then(db => {console.log("Database connected");}).catch(error => console.log("Could not connect to mongo db " + error));
+mongoose.connect(dbURL,{ useNewUrlParser: true, useUnifiedTopology: true}).then(db => {console.log("Database connected");}).catch(error => console.log("Could not connect to mongo db " + error));
 
 const todoSchema = { name : String };
 
@@ -150,7 +151,7 @@ app.post('/remove',async (req,res)=>{
 let port = process.env.PORT;
 if(port == null || port == "") { port = 3000 };
 
-app.listen(4000,()=>{
+app.listen(port,()=>{
     console.log(`Todo App Rendering Successful!`);
 })
 
